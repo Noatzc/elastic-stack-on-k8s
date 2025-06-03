@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: hello-world
+  labels:
+    app: hello-world
+  annotations:
+    co.elastic.logs/enabled: "true"
+spec:
+  containers:
+    - name: hello-world
+      image: busybox
+      command: ["sh", "-c", "while true; do echo 'Hello from Kubernetes!'; sleep 5; done"]
